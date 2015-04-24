@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+                <script src="radiant-heat-57.firebaseapp.com"></script>
+        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    </head>
+    <body>
+        <div id="login">
+            <input type='text' id='userInput' placeholder='Username'>
+            <input type='password' id='passwordInput' placeholder='Pasword'>
+        </div>
+        <script>
+            var ref = new Firebase('https://radiant-heat-57.firebaseio.com/');
+            
+ref.authWithOAuthPopup("facebook", function(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+  }
+});
+        </script>
+    </body>
+</html>
+
